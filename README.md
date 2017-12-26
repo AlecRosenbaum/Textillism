@@ -1,6 +1,6 @@
 # Textillism
 
-![sample input](sample/input_image.jpg "Sample Input") -> ![sample output](sample/output.jpg "Sample Output")
+![sample input](sample/input_image.jpg "Sample Input"){:height="270" width="200"} -> ![sample output](sample/output.jpg "Sample Output"){:height="270" width="200"}
 
 Create an image using text! Convert a source image into a black-and-white rendition comprised entirely of the input text. Here's how to use this script:
 
