@@ -4,7 +4,7 @@
 
 If you look closely, you can read the Lorem Ipsum text!
 
-<img src="sample/output.jpg" height="675" width="500" style="clip: rect(0px,600px,200px,0px); position:absolute;">
+<img src="sample/output.jpg" height="675" width="500">
 
 
 Create an image using text! Convert a source image into a black-and-white rendition comprised entirely of the input text. Here's how to use this script:
