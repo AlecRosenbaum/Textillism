@@ -12,13 +12,13 @@ Create an image using text! Convert a source image into a black-and-white rendit
 * Install requirements:
     - `pip install -r requirements.txt`
 * Modify script to use custom images/text/font/etc
-    - ```
-    INPUT = "sample/input_image.jpg"
-    TEXT_FILE = "sample/input_text.txt"
-    OUTPUT_FILE = "sample/output.jpg"
-    OUTPUT_SCALE = 2
-    FONT_NAME = "sample/Arial_Bold.ttf"
-    FONT_SIZE = 10
+    ```python
+        INPUT = "sample/input_image.jpg"
+        TEXT_FILE = "sample/input_text.txt"
+        OUTPUT_FILE = "sample/output.jpg"
+        OUTPUT_SCALE = 2
+        FONT_NAME = "sample/Arial_Bold.ttf"
+        FONT_SIZE = 10
     ```
 * Run script: `python main.py`
 
