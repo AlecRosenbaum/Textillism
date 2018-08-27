@@ -1,41 +1,30 @@
-FROM python:3.7-stretch
+FROM python:3.7-alpine
 
 # Copy python requirements file
 COPY requirements.txt /tmp/requirements.txt
 
 # install dependencies
-RUN apt-get update && apt-get install -y \
-    python-numpy \
-    python-scipy \
-    libffi-dev \
-    libjpeg-turbo-progs \
-    python-setuptools \
-    python-dev \
-    python3-dev \
-    cmake \
-    libtiff5-dev \
-    libjpeg62-turbo-dev \
-    zlib1g-dev \
-    libfreetype6-dev \
-    liblcms2-dev \
-    libwebp-dev \
-    tcl8.6-dev \
-    tk8.6-dev \
-    python-tk \
-    python3-tk \
-    libharfbuzz-dev \
-    libfribidi-dev \
+RUN apk --no-cache add \
+    # Pillow dependencies
+    jpeg-dev \
+    zlib-dev \
+    freetype-dev \
+    lcms2-dev \
+    openjpeg-dev \
+    tiff-dev \
+    harfbuzz-dev \
+    fribidi-dev \
+    # hosting dependencies
     nginx \
-    uwsgi \
-    uwsgi-plugin-python3 \
     supervisor \
-    && pip3 install --upgrade pip setuptools \
-    && pip3 install -r /tmp/requirements.txt \
-    && apt-get clean
-
-
-RUN groupadd -g 999 nginx && \
-    useradd -r -u 999 -g nginx nginx
+    && apk add --no-cache --virtual .build-deps \
+        musl-dev \
+        g++ \
+        linux-headers \
+    && pip install -r /tmp/requirements.txt \
+    && apk del .build-deps \
+    && rm /etc/nginx/conf.d/default.conf \
+    && rm -r /root/.cache
 
 # Copy the Nginx global conf
 COPY nginx.conf /etc/nginx/
@@ -51,3 +40,4 @@ COPY ./src /src
 WORKDIR /src
 
 CMD ["/usr/bin/supervisord"]
+EXPOSE 80

@@ -1,0 +1,8 @@
+*
+!src/**/*
+!src
+!flask-site-nginx.conf
+!nginx.conf
+!supervisord.conf
+!uwsgi.ini
+!requirements.txt
