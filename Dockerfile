@@ -9,11 +9,6 @@ RUN apk --no-cache add \
     jpeg-dev \
     zlib-dev \
     freetype-dev \
-    lcms2-dev \
-    openjpeg-dev \
-    tiff-dev \
-    harfbuzz-dev \
-    fribidi-dev \
     # hosting dependencies
     nginx \
     supervisor \
