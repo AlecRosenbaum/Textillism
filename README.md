@@ -1,10 +1,10 @@
 # Textillism
 
-<img src="sample/input_image.jpg" height="270" width="200"> -> <img src="sample/output.jpg" height="270" width="200">
+<img src="src/sample/input_image.jpg" height="270" width="200"> -> <img src="src/sample/output.jpg" height="270" width="200">
 
 If you look closely, you can read the Lorem Ipsum text!
 
-<img src="sample/output.jpg" height="675" width="500">
+<img src="src/sample/output.jpg" height="675" width="500">
 
 
 Create an image using text! Convert a source image into a black-and-white rendition comprised entirely of the input text. Here's how to use this script:
